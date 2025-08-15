@@ -3,6 +3,7 @@ from sklearn.model_selection import GridSearchCV, cross_val_score
 from sklearn.metrics import classification_report, precision_score, recall_score
 import pandas as pd
 import numpy as np
+from TF_IDF_Feature_Extractor import Feature_Extractor
 import joblib
 from datetime import datetime
 

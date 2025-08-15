@@ -278,8 +278,8 @@ class SpamRescueValidator:
 
 def main():
     """Example usage of the validation framework"""
-    from Spam_Rand_Forest import SpamRescueRandomForest
-    from TF_IDF_Feature_Extractor import Feature_Extractor
+    from models.Spam_Rand_Forest import SpamRescueRandomForest
+    from models.TF_IDF_Feature_Extractor import Feature_Extractor
     from Spam_Classifier import BaseLineSpamClassifier
     
     # Load data
