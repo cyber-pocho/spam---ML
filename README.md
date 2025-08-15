@@ -1,34 +1,59 @@
-Hi everyone!
+# Spam Rescue – Machine Learning Model
 
-This README is a quick explainer of this "Spam Rescue" Machine Learning model that I've created. 
+Hi everyone!  
 
-This specific model was born out of the necessity of erasing a very simple problem that many people may face; in particular those running a mid-sized email queue. 
+This README is a quick overview of the **"Spam Rescue"** Machine Learning model I created.  
 
-Often, our google GMAIL pipeline may discard certain messages or emails to the SPAM box where they are very difficult to retrieve and may be quite cumbersome to process this manually. 
+This project was born out of a common annoyance—especially for those managing medium-sized email queues: **legitimate emails sometimes get thrown into Gmail's Spam folder**. Once they’re in there, retrieving them can be tedious and frustrating.  
 
-Just finding a "Legitimate" email out of hundreds of spam emails, without an extension on your browser or KPI (which may not be private and may not be trust-worthy), may be cumbersome. 
+Finding one legitimate message among hundreds of spam entries—without using a potentially privacy-invasive browser extension or third-party KPI tool—can be a real headache.  
 
-Our model, a "Spam Rescue bot", is, in essence, a self-learning machine that can, with the correct features that we assign it, label an message Legitimate, resend it to the main Inbox and mark it as "not spam". 
+---
 
-It's important to note that this model learns from the data and has a training based on the information that it's given to the the model. 
+## What is Spam Rescue?
 
-PRECISSION OVER ACCURACY:
-Given the small sample of data and the binary nature of the model, our team (me and my cat) decided to prioritize precission over accuracy.
+**Spam Rescue Bot** is a self-learning machine learning model designed to identify legitimate emails in your spam folder, move them back to your inbox, and mark them as “Not Spam.”  
 
-What this means is that we'd like for the model not to process too many "false-positives" in our confussion matrix but rather a proportionate amount of "true-positives". 
+With the right features and training data, the model can automatically rescue valuable messages while minimizing the number of false positives.  
 
-In the folder "Data", you will find some dumb, synthetic data, that was created with the intention of showing off the model. As of now (August 14, 2025), there's no been no training with real data as the amount of data required for the model to train itself is limited and thus it's not worthy as the precission will always be 100%. 
+> **Note:** This model learns from the data you provide. Its accuracy and usefulness depend heavily on the quality and relevance of your training set.
 
-1. As for how this model will get its data, it is quite simple. We will simply integrate any GMAIL API, via the Google Cloud O2Auth, with a JSON token. 
+---
 
-2. Once the data is loaded and validated, see src/val.py the user must, with their knowledge of the features, assign the corresponding features and weights so the model can start learning.
+## Precision Over Accuracy
 
-3. Once the model starts learning, the user may feel free to start using the GMAIL integration and both forwarding the email to either GMAIL, DIXA or whatever API they are using to receive and send messages. 
+Given our small dataset and the binary nature of the task, **I (and my cat)** decided to prioritize **precision** over accuracy.  
 
-Note: This project is particularly useful to anyone manually checking their spam inbox and having to manually drage the spam out of the box. It may not be useful to the common/standard personal use, but may be useful to medium sized business who would like to avoid the abhorrent task of processing the manual rescue of their spam. 
+This means the model is tuned to minimize false positives—ensuring that we don’t mistakenly move actual spam into the inbox—while still catching true positives effectively.  
 
+---
 
-For any contacts, email me at: juliandavid.alfonso.gomez@gmail.com
+## Current Data
 
+Inside the `Data` folder, you’ll find synthetic sample data created purely to demonstrate the model.  
 
-Last Update: August 14, 2025
+As of **August 14, 2025**, the model has not been trained on real-world data. With such a small dataset, real-data training would result in artificially perfect (100%) precision, which isn’t meaningful for performance evaluation.  
+
+---
+
+## How It Works
+
+1. **Data Acquisition** – Integrate Gmail API via Google Cloud OAuth, using a JSON token for authentication.  
+2. **Data Preparation** – Once emails are loaded and validated (see `src/val.py`), assign features and weights based on domain knowledge so the model can start learning.  
+3. **Deployment** – Use the Gmail integration to automatically forward rescued emails to your inbox or another platform (Gmail, Dixa, or any other API-supported service).  
+
+---
+
+## Who Is This For?
+
+Spam Rescue is most useful for:  
+- Medium-sized businesses managing a shared inbox  
+- Teams that frequently lose important client or vendor emails to spam  
+- Anyone who wants to **reduce the time spent manually checking and dragging emails out of the spam folder**
+
+For personal, low-volume email users, the benefit may be minimal.  
+
+---
+
+**Contact:** juliandavid.alfonso.gomez@gmail.com  
+**Last Update:** August 14, 2025  
