@@ -1,4 +1,3 @@
-# CORRECTED VERSION - Replace your Spam_Rescue_Validator.py with this
 
 import numpy as np
 import pandas as pd
